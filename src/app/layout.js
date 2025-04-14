@@ -28,7 +28,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${poppins.className} ${ubuntu.variable} antialiased p-4`}
+        className={`${poppins.className} ${ubuntu.variable} antialiased p-2`}
       >
         {children}
         <Toaster />

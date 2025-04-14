@@ -1,6 +1,9 @@
 import { GoogleGenAI, Type } from "@google/genai"
 import * as yup from 'yup'
 
+const apiKey = process.env.GEMINI_API_KEY
+
+if(!apiKey) throw new Error("GEMINI_API_KEY not found in environment variables")
 const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
 const requestSchema = yup.object().shape({
     title: yup
