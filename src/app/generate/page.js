@@ -1,5 +1,6 @@
 "use client"
 
+import Link from "next/link"
 import { useForm, Controller } from "react-hook-form"
 import {
     Tabs,
@@ -69,19 +70,21 @@ export default function Home({ }) {
 
     return (
         <div className="max-w-2xl m-auto">
-            <Image
-                src="/logo.svg"
-                width={500}
-                height={500}
-                alt="Upmagic Logo"
-                className="h-8 w-8 absolute top-4 left-4"
-            />
+            <Link className="absolute top-4 left-4" href="/">
+                <Image
+                    src="/logo.svg"
+                    width={500}
+                    height={500}
+                    alt="Upmagic Logo"
+                    className="h-8 w-8"
+                />
+            </Link>
             <div className="text-center mt-10">
                 <h1 className="mb-4">
                     <SparklesText sparklesCount={5} colors={{
                         first: "#FF0",
                         second: "#FF0"
-                    }} className="text-3xl">
+                    }} className="text-3xl text-primary">
                         Upmagic 🪄
                     </SparklesText>
                 </h1>
@@ -93,7 +96,7 @@ export default function Home({ }) {
                     <TabsContent value="generate">
                         <form className="flex flex-col gap-4" onSubmit={handleSubmit(onSubmit)}>
                             <Input
-                                className={`text-lg font-bold ${errors.title ? 'border-red-400' : ''}`}
+                                className={`text-lg font-semibold ${errors.title ? 'border-red-400' : ''}`}
                                 placeholder="Job title..."
                                 {...register("title", { required: "Title is required" })}
                             />
