@@ -74,7 +74,6 @@ Please write the proposal below:
         });
 
         const responseJSON = JSON.parse(response.text.trim())
-        console.log("Response:\n", responseJSON)
 
         if (!responseJSON.proposal) {
             return Response.json({
