@@ -1,6 +1,7 @@
 import { Poppins, Ubuntu } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "@/components/ui/sonner"
+import { TooltipProvider } from "@radix-ui/react-tooltip";
 
 const ubuntu = Ubuntu({
   weight: ['400', '500', '700'],
@@ -30,7 +31,9 @@ export default function RootLayout({ children }) {
       <body
         className={`${poppins.className} ${ubuntu.variable} antialiased p-2`}
       >
-        {children}
+        <TooltipProvider>
+          {children}
+        </TooltipProvider>
         <Toaster />
       </body>
     </html>

@@ -110,21 +110,29 @@
       backgroundPosition: bottom center;
     }
   }
+
   @keyframes rainbow {
-  0% {
-    background-position: 0%;
+    0% {
+      background-position: 0%;
     }
-  100% {
-    background-position: 200%;
+
+    100% {
+      background-position: 200%;
     }
   }
-  --animate-orbit: orbit calc(var(--duration)*1s) linear infinite
-;
+
+  --animate-orbit: orbit calc(var(--duration)*1s) linear infinite;
+
   @keyframes orbit {
-  0% {
-    transform: rotate(calc(var(--angle) * 1deg)) translateY(calc(var(--radius) * 1px)) rotate(calc(var(--angle) * -1deg));}
-  100% {
-    transform: rotate(calc(var(--angle) * 1deg + 360deg)) translateY(calc(var(--radius) * 1px)) rotate(calc((var(--angle) * -1deg) - 360deg));}}}
+    0% {
+      transform: rotate(calc(var(--angle) * 1deg)) translateY(calc(var(--radius) * 1px)) rotate(calc(var(--angle) * -1deg));
+    }
+
+    100% {
+      transform: rotate(calc(var(--angle) * 1deg + 360deg)) translateY(calc(var(--radius) * 1px)) rotate(calc((var(--angle) * -1deg) - 360deg));
+    }
+  }
+}
 
 :root {
   --radius: 0.625rem;
@@ -203,6 +211,19 @@
   --color-3: hsl(210 100% 63%);
   --color-4: hsl(195 100% 63%);
   --color-5: hsl(90 100% 63%);
+}
+
+/* -------------------- custom --------------------- */
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
 }
 
 @theme {
